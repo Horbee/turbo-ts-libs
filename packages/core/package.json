@@ -1,0 +1,50 @@
+{
+  "name": "@horbee/core",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/core.cjs.js",
+  "module": "./dist/core.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/core.es.js",
+      "require": "./dist/core.cjs.js"
+    },
+    "./api": {
+      "import": "./dist/api.es.js",
+      "require": "./dist/api.cjs.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "core": [
+        "dist/index.d.ts"
+      ],
+      "api": [
+        "dist/api.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/node": "^18.14.6",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.0.2"
+  },
+  "dependencies": {
+    "axios": "^1.3.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
